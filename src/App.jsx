@@ -4,8 +4,8 @@ import './App.css';
 //components
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Surveys from './pages/Earn/Surveys';
+import Items from './pages/Shop/Items';
 
 function App() {
 	return (
@@ -15,8 +15,8 @@ function App() {
 					<Navbar />
 					<Routes>
 						<Route path='/' element={<Home />}></Route>
-						<Route path='/about' element={<About />}></Route>
-						<Route path='/contact' element={<Contact />}></Route>
+						<Route path='/surveys' element={<Surveys />}></Route>
+						<Route path='/items' element={<Items />}></Route>
 					</Routes>
 				</>
 			</div>

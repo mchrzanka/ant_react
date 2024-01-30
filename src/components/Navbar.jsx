@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //icons
 import {
@@ -25,14 +26,17 @@ function getItem(label, key, icon, children, type) {
 const items = [
 	getItem('Dashboard', 'sub1', <MailOutlined />),
 	getItem('Earn', 'sub2', <AppstoreOutlined />, [
-		getItem('Option 5', '5'),
-		getItem('Option 6', '6'),
+		getItem('Surveys', '1'),
+		getItem('Quizzes', '2'),
+		getItem('Events', '3'),
 	]),
 	getItem('Shop', 'sub3', <SettingOutlined />, [
-		getItem('Option 9', '9'),
-		getItem('Option 10', '10'),
-		getItem('Option 11', '11'),
-		getItem('Option 12', '12'),
+		getItem('Items', '4'),
+		getItem('Raffles', '5'),
+		getItem('Offers', '6'),
+		getItem('Sign-in', '7'),
+		getItem('Barcodes', '8'),
+		getItem('Transactions', '9'),
 	]),
 ];
 
@@ -56,6 +60,8 @@ export default function Navbar() {
 			setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
 		}
 	};
+
+	//use react-router-dom Link to wrap each menu item so that it can be navigated to. If a menu has children (submenus), it's wrapped in a Menu.SubMenu, with each of the submenu's Items wrapped in a Link. Else, if the menu item does not have children, it's wrapped directly as a menu item and then a link.
 	return (
 		<Menu
 			mode='inline'
@@ -64,7 +70,28 @@ export default function Navbar() {
 			style={{
 				width: 256,
 			}}
-			items={items}
-		/>
+		>
+			{items.map((item) => {
+				if (item.children) {
+					return (
+						<Menu.SubMenu key={item.key} title={item.label} icon={item.icon}>
+							{item.children.map((childItem) => (
+								<Menu.Item key={childItem.key}>
+									<Link to={`/${childItem.label}`}>{childItem.label}</Link>
+								</Menu.Item>
+							))}
+						</Menu.SubMenu>
+					);
+				} else {
+					return (
+						<Menu.Item key={item.key} icon={item.icon}>
+							<Link to={item.label === 'Dashboard' ? '/' : `/${item.label}`}>
+								{item.label}
+							</Link>
+						</Menu.Item>
+					);
+				}
+			})}
+		</Menu>
 	);
 }
