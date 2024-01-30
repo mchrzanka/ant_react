@@ -6,6 +6,7 @@ import {
 	AppstoreOutlined,
 	MailOutlined,
 	SettingOutlined,
+	ShopFilled,
 } from '@ant-design/icons';
 
 //components
@@ -30,7 +31,7 @@ const items = [
 		getItem('Quizzes', '2'),
 		getItem('Events', '3'),
 	]),
-	getItem('Shop', 'sub3', <SettingOutlined />, [
+	getItem('Shop', 'sub3', <ShopFilled />, [
 		getItem('Items', '4'),
 		getItem('Raffles', '5'),
 		getItem('Offers', '6'),
@@ -38,6 +39,16 @@ const items = [
 		getItem('Barcodes', '8'),
 		getItem('Transactions', '9'),
 	]),
+	getItem('Promotions', 'sub4', <SettingOutlined />, [
+		getItem('Vouchers', '10'),
+		getItem('Promos', '11'),
+	]),
+	getItem('Announcements', 'sub5', <SettingOutlined />),
+	getItem('Templates', 'sub6', <SettingOutlined />),
+	getItem('Community', 'sub7', <SettingOutlined />),
+	getItem('Support', 'sub8', <SettingOutlined />),
+	getItem('Settings', 'sub9', <SettingOutlined />),
+	getItem('Logout', 'sub10', <SettingOutlined />),
 ];
 
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
@@ -67,9 +78,7 @@ export default function Navbar() {
 			mode='inline'
 			openKeys={openKeys}
 			onOpenChange={onOpenChange}
-			style={{
-				width: 256,
-			}}
+			style={{ height: '100vh' }}
 		>
 			{items.map((item) => {
 				if (item.children) {
