@@ -78,13 +78,13 @@ export default function Navbar() {
 			mode='inline'
 			openKeys={openKeys}
 			onOpenChange={onOpenChange}
-			style={{ height: '100vh' }}
+			className='custom-sidenav'
 		>
 			{items.map((item) => {
-				if (item.children) {
+				if (item.items) {
 					return (
 						<Menu.SubMenu key={item.key} title={item.label} icon={item.icon}>
-							{item.children.map((childItem) => (
+							{item.items.map((childItem) => (
 								<Menu.Item key={childItem.key}>
 									<Link to={`/${childItem.label}`}>{childItem.label}</Link>
 								</Menu.Item>

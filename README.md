@@ -1,8 +1,14 @@
-# React + Vite
+# React, Vite, Ant Design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Spinning up a quick project to test out.
 
-Currently, two official plugins are available:
+-Installed Vite react
+-Cleaned up project
+-Added ant design & ant icons
+-Added side nav, and layout components
+-Added scss to project
+-Figured out themeing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Commands
+
+Npm run dev

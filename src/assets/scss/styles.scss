@@ -1,0 +1,35 @@
+@use './assets.scss' as a;
+
+.custom-layout {
+	margin-left: 20rem;
+}
+
+.custom-sidenav {
+	height: 100vh;
+	background: a.$bg;
+
+	li {
+		color: a.$lightgrey;
+
+		&:hover {
+			color: a.$white !important;
+		}
+		a {
+			color: a.$white;
+		}
+	}
+}
+
+.custom-header {
+	background-color: transparent;
+	padding: 2rem;
+	margin: 2rem;
+	border-bottom: 1px solid grey;
+}
+
+.custom-content {
+	overflow: initial;
+}
+
+.custom-footer {
+}

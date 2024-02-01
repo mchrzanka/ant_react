@@ -12,6 +12,10 @@ const { Header, Content, Footer, Sider } = Layout;
 
 //components
 import Navbar from './components/Navbar';
+import CustomHeader from './components/layout/Header';
+import CustomFooter from './components/layout/Footer';
+
+//pages
 import Home from './pages/Home';
 import Surveys from './pages/Earn/Surveys';
 import Items from './pages/Shop/Items';
@@ -33,23 +37,12 @@ function App() {
 					<div className='demo-logo-vertical' />
 					<Navbar />
 				</Sider>
-				<Layout
-					style={{
-						marginLeft: 200,
-					}}
-				>
-					<Header
-						style={{
-							padding: 0,
-							background: 'lightgrey',
-						}}
-					/>
-					<Content
-						style={{
-							overflow: 'initial',
-							background: 'tomato',
-						}}
-					>
+				<Layout className='custom-layout'>
+					<Header className='custom-header'>
+						<CustomHeader />
+					</Header>
+
+					<Content className='custom-content'>
 						<Routes>
 							<Route path='/' element={<Outlet />}>
 								<Route index element={<Home />} />
@@ -62,13 +55,8 @@ function App() {
 							</Route>
 						</Routes>
 					</Content>
-					<Footer
-						style={{
-							textAlign: 'center',
-							background: 'lightgrey',
-						}}
-					>
-						Ant Design ©{new Date().getFullYear()} Created by Ant UED
+					<Footer className='custom-footer'>
+						<CustomFooter />
 					</Footer>
 				</Layout>
 			</Layout>
