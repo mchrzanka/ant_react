@@ -1,28 +1,12 @@
 import React from 'react';
+import { Button } from 'antd';
 
 export default function Home() {
 	return (
-		<div
-			style={{
-				padding: 24,
-				textAlign: 'center',
-			}}
-		>
-			<p>long content</p>
-			{
-				// indicates very long content
-				Array.from(
-					{
-						length: 100,
-					},
-					(_, index) => (
-						<React.Fragment key={index}>
-							{index % 20 === 0 && index ? 'home' : '...'}
-							<br />
-						</React.Fragment>
-					)
-				)
-			}
+		<div>
+			<h1>Home</h1>
+			<Button type='primary'>Create New</Button>
+			<Button>View Logs</Button>
 		</div>
 	);
 }

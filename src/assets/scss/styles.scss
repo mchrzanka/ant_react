@@ -2,18 +2,40 @@
 
 .custom-layout {
 	margin-left: 20rem;
+	background: a.$bg;
+	min-height: 100vh;
+}
+
+.custom-sider {
+	overflow: auto;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background-color: red;
 }
 
 .custom-sidenav {
 	height: 100vh;
 	background: a.$bg;
 
-	li {
-		color: a.$lightgrey;
+	.ant-menu-submenu-open,
+	.ant-menu-item-selected,
+	.ant-menu-item-selected .ant-menu-submenu-title {
+		background-color: a.$black;
+		color: a.$white !important;
+	}
 
-		&:hover {
+	li {
+		color: a.$lightgrey !important;
+
+		&:hover,
+		&:active {
 			color: a.$white !important;
+			background-color: a.$black !important;
 		}
+
 		a {
 			color: a.$white;
 		}
@@ -22,14 +44,17 @@
 
 .custom-header {
 	background-color: transparent;
-	padding: 2rem;
-	margin: 2rem;
-	border-bottom: 1px solid grey;
+	margin: 4rem;
+	border-bottom: 1px solid a.$lightgrey;
+	padding: 0;
+
+	.ant-breadcrumb li,
+	.ant-breadcrumb a {
+		color: white;
+	}
 }
 
 .custom-content {
 	overflow: initial;
-}
-
-.custom-footer {
+	margin: 4rem;
 }

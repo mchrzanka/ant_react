@@ -55,22 +55,12 @@ function App() {
 							</Route>
 						</Routes>
 					</Content>
-					<Footer className='custom-footer'>
+					{/* <Footer className='custom-footer'>
 						<CustomFooter />
-					</Footer>
+					</Footer> */}
 				</Layout>
 			</Layout>
 		</Router>
-		// <>
-		// 	<Router>
-		// 		<Navbar />
-		// 		<Routes>
-		// 			<Route path='/' element={<Home />}></Route>
-		// 			<Route path='/surveys' element={<Surveys />}></Route>
-		// 			<Route path='/items' element={<Items />}></Route>
-		// 		</Routes>
-		// 	</Router>
-		// </>
 	);
 }
 

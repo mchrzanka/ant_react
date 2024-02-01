@@ -81,10 +81,10 @@ export default function Navbar() {
 			className='custom-sidenav'
 		>
 			{items.map((item) => {
-				if (item.items) {
+				if (item.children) {
 					return (
 						<Menu.SubMenu key={item.key} title={item.label} icon={item.icon}>
-							{item.items.map((childItem) => (
+							{item.children.map((childItem) => (
 								<Menu.Item key={childItem.key}>
 									<Link to={`/${childItem.label}`}>{childItem.label}</Link>
 								</Menu.Item>

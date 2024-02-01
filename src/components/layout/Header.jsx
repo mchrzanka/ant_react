@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { HomeOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Button, Flex } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
@@ -20,21 +20,24 @@ export default function Header() {
 	});
 
 	return (
-		<Breadcrumb
-			separator='>'
-			items={[
-				{
-					title: 'Home',
-				},
-				{
-					title: 'Application Center',
-					href: '',
-				},
-				{
-					title: 'Application List',
-					href: '',
-				},
-			]}
-		/>
+		<Flex justify='space-between' align='middle'>
+			<Breadcrumb
+				separator='>'
+				items={[
+					{
+						title: 'Home',
+					},
+					{
+						title: 'Application Center',
+						href: '',
+					},
+					{
+						title: 'Application List',
+						href: '',
+					},
+				]}
+			/>
+			<Button type='link'>Docs</Button>
+		</Flex>
 	);
 }
